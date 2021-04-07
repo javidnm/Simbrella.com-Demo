@@ -1,0 +1,1481 @@
+$aColor:#eee;
+$aHoverColor:#FF931E;
+$white:#fff;
+$whatWeDo:#2D3192;
+$black:black;
+$backColor:#f6f8fe;
+$paragraphColor:#5F6773;
+$blendColor:#0000005c;
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header {
+    background-color: rgba(0,0,0,0) !important;
+    position: fixed;
+    width: 100%;
+    transition: .6s;
+    z-index: 2;
+    .container {    
+        .logo {
+            background-image: url("https://www.simbrella.com/site/templates/img/logo.svg");
+            display: inline-block;
+            width: 154px;
+            height: 53px;
+            background-repeat: no-repeat;
+        }
+
+        ul {
+            li {
+                padding: 0 0 0 35px;
+                list-style: none;
+
+                a {
+                    transition: all 0.15s linear;
+                    font-size: 17px;
+                    line-height: 1.41;
+                    color: $aColor;
+                }
+
+                a:hover {
+                    color: $aHoverColor;
+                    text-decoration: none;
+                }
+
+                a.active {
+                    color: $aHoverColor;
+                }
+            }
+
+        }
+
+        .hamburgerIcon {
+            float: right;
+
+            .header__hamburger {
+                width: 24px;
+                height: 2px;
+                background-color: $white;
+                position: relative;
+                border-radius: 2px;
+                transition: .3s;
+                transition-delay: .3s;
+
+                &::after,
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-color: $white;
+                    left: 0;
+                    border-radius: 2px;
+                }
+
+                &::before {
+                    top: -6px;
+
+                }
+
+                &::after {
+                    top: 6px;
+                }
+
+                &--active {
+                    background-color: transparent !important;
+                    transform: rotate(180deg);
+
+                    &::before,
+                    &::after {
+                        animation-duration: .6s;
+                        animation-fill-mode: forwards;
+                    }
+
+                    &::before {
+                        animation-name: hamburgerTop;
+                    }
+
+                    &::after {
+                        animation-name: hamburgerDown;
+                    }
+                }
+
+                &--close {
+                    transform: rotate(-180deg);
+
+                    &::before,
+                    &::after {
+                        animation-duration: .6s;
+                        animation-fill-mode: forwards;
+                    }
+
+                    &::before {
+                        animation-name: closeHamburgerTop;
+                    }
+
+                    &::after {
+                        animation-name: closeHamburgerDown;
+                    }
+                }
+            }
+
+
+
+            @keyframes hamburgerTop {
+                0% {
+                    top: -6px;
+                    transform: rotate(0);
+                }
+
+                50% {
+                    top: 0;
+                    transform: rotate(0);
+                }
+
+                100% {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+            }
+
+            @keyframes hamburgerDown {
+                0% {
+                    top: 6px;
+                    transform: rotate(0);
+                }
+
+                50% {
+                    top: 0;
+                    transform: rotate(0);
+                }
+
+                100% {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+
+
+
+
+            @keyframes closeHamburgerTop {
+                0% {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+
+                50% {
+                    top: 0;
+                    transform: rotate(0);
+                }
+
+                100% {
+                    top: -6px;
+                    transform: rotate(0);
+                }
+            }
+
+            @keyframes closeHamburgerDown {
+                0% {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+
+                50% {
+                    top: 0;
+                    transform: rotate(0);
+                }
+
+                100% {
+                    top: 6px;
+                    transform: rotate(0);
+                }
+            }
+
+
+
+            .header__hamburger--scroll {
+                width: 24px;
+                height: 2px;
+                background-color: $whatWeDo;
+                position: relative;
+                border-radius: 2px;
+                transition: .3s;
+                transition-delay: .3s;
+
+                &::after,
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-color: $whatWeDo;
+                    left: 0;
+                    border-radius: 2px;
+                }
+
+                &::before {
+                    top: -6px;
+
+                }
+
+                &::after {
+                    top: 6px;
+                }
+            }
+
+        }
+    }
+    .after-click{
+        
+        transition: .5s; 
+        height: 100vh;
+        .customized-list-group__items{
+            a{
+                color: $white !important;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+            
+        } 
+    }
+    .customized-list-group{
+        list-style-type: none !important;
+            &__items{
+            padding: 24px 8px;
+            border-bottom:1px solid #504e78;
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+            }
+        }
+    
+    @media screen and (max-width:1023px) {
+
+        .menuItems {
+            display: none !important;
+        }
+
+        .hamburgerIcon {
+            display: block !important;
+        }
+    }
+
+}
+
+.blueColor{
+    background-color: $whatWeDo !important;
+}
+
+
+.header.active {
+    height: 80px;
+    background: $white !important;
+    z-index: 2;
+    box-shadow: 0 0 10px 0;
+
+    .logo {
+        background-image: url(https://www.simbrella.com/site/templates/img/logo_colored.svg);
+        background-repeat: no-repeat;
+    }
+
+    ul {
+        li {
+            a {
+                color: $black;
+                font-size: 17px;
+                line-height: 1.41;
+            }
+        }
+    }
+}
+
+#firstSection {
+    background-image: url("https://www.simbrella.com/site/assets/files/1040/cover.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    background-size: cover;
+    background-color: #00000045;
+    background-blend-mode: color;
+
+    @media screen and(max-width:768px) {
+
+        background-position: 60% 50%;
+
+        h1 {
+            font-size: 25px;
+        }
+
+    }
+    .container{
+        z-index: 1;
+    }
+
+    .bigText {
+        max-width: 640px;
+
+        h1 {
+
+            padding: 0 0 16px;
+            font-size: 51px;
+            line-height: 1.29;
+            letter-spacing: -0.01em;
+            color: $white;
+            font-weight: 600;
+
+            @media screen and(max-width:1023px) {
+                font-size: 35px;
+
+            }
+        }
+
+        .text {
+            color: $white;
+            padding: 0 0 48px;
+            font-size: 16px;
+            line-height: 1.87;
+        }
+    }
+
+    .scrollBtn {
+        position: absolute;
+        bottom: 50px;
+
+        a {
+            color: $white;
+            padding: 0 0 0 34px;
+            font-size: 14px;
+            line-height: 1.71;
+            position: relative;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        a::before {
+            content: "";
+            display: block;
+            width: 22px;
+            height: 41px;
+            background: url(https://www.simbrella.com/site/templates/img/mouse_icon.svg) no-repeat 0 0;
+            position: absolute;
+            left: 0;
+            top: calc(50% - 26px);
+        }
+    }
+}
+
+#secondSection {
+    padding: 35px 0 60px;
+
+    .information {
+        h2 {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: $whatWeDo;
+        }
+
+        .link {
+            a {
+                display: inline-block;
+                height: 56px;
+                padding: 0 100px 0 24px;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 56px;
+                color: #222;
+                text-decoration: none;
+                background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 24px) 50%;
+                box-shadow: inset 0 0 0 3px #dfe4eb;
+                border-radius: 12px;
+                transition: all 0.15s linear;
+            }
+
+            a:hover {
+                background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 20px) 50%;
+                box-shadow: inset 0 0 0 3px #ff931e;
+            }
+        }
+    }
+
+    .card {
+        transition: .3s ease-in-out;
+        padding: 40px 0;
+
+        img {
+            height: 230px;
+        }
+
+        .card-body {
+            text-align: center;
+
+            h3 {
+                padding: 0 0 16px;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 1.25;
+                text-align: center;
+                letter-spacing: 0.01em;
+
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.62;
+                text-align: center;
+                color: #5F6773;
+            }
+        }
+
+        .full_link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+}
+
+#thirdSection {
+    z-index: 1;
+    background-image: url(https://www.simbrella.com/site/assets/files/1049/solutions_bg-1.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    height: 60vh;
+
+    h2 {
+
+        font-weight: bold;
+        font-size: 54px;
+        line-height: 1.29;
+        letter-spacing: 0.01em;
+        color: $white;
+        text-shadow: 2px 2px 6px black;
+        width: 50%;
+
+        @media screen and (max-width:992px) {
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+
+    .list {
+        z-index: 2;
+
+        li {
+            list-style: none;
+            padding: 32px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+            @media screen and (max-width:992px) {
+                padding: 10px 0;
+
+            }
+
+            h3 {
+                @media screen and (max-width:992px) {
+
+
+                    font-size: 13px;
+
+                }
+
+                padding: 0 0 0px;
+                font-weight: bold;
+                font-size: 21px;
+                line-height: 1.12;
+                color: $white;
+            }
+        }
+    }
+
+
+}
+
+#thirdSection::before {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: rgba(45, 49, 146, 0.6);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#fourthSection {
+    padding: 60px 0 0;
+
+    h2 {
+        padding: 0 0 40px;
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 1.29;
+        letter-spacing: 0.01em;
+        color: $whatWeDo;
+    }
+
+    .counter {
+        padding: 90px 0;
+
+        .counfect {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            padding: 0 0 8px;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            color: $aHoverColor;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1.86;
+            text-transform: uppercase;
+            color: $black;
+        }
+    }
+}
+
+#map {
+    padding: 0 0 60px;
+
+    .map-inner {
+        position: relative;
+
+        .inner {
+            width: 100%;
+            height: 0;
+            padding: 0px 20px 0px;
+            position: absolute;
+            left: 0px;
+            top: 80px;
+
+            h2 {
+                height: 0;
+                font-weight: bold;
+                font-size: 36px;
+                line-height: 1.29;
+                letter-spacing: 0.01em;
+                color: $whatWeDo;
+
+            }
+
+            @media screen and (max-width:992px) {
+                text-align: center;
+                top: 0;
+            }
+        }
+
+        .map_svg {
+            div {
+                cursor: pointer;
+            }
+        }
+
+        .operatorsInfo {
+            width: 100%;
+            height: 0;
+            padding: 0 20px;
+            position: absolute;
+            left: 0;
+            bottom: 160px;
+
+            @media screen and (max-width:992px) {
+                display: none !important;
+            }
+
+            div {
+                display: block;
+                padding: 27px;
+                border: 1px solid #D3D8E7;
+                border-radius: 4px;
+
+                p {
+                    margin: 0 0 16px;
+                    padding: 0 0 0 30px;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    text-transform: capitalize;
+                    color: #222;
+                    position: relative;
+                }
+
+                p.orange::before,
+                p.orange::after {
+                    background-color: $aHoverColor;
+                }
+
+                p.blue::before,
+                p.blue::after {
+                    background-color: $whatWeDo;
+                }
+
+                p.both::before,
+                p.both::after {
+                    opacity: 1;
+                    background: url(https://www.simbrella.com/site/templates/img/both_icon.svg) no-repeat 50%;
+                    background-size: 24px;
+                }
+
+                p::before {
+                    content: "";
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    top: calc(50% - 10px);
+                    opacity: 0.3;
+                }
+
+                p::after {
+                    content: "";
+                    display: block;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 7px;
+                    top: calc(50% - 3px);
+                }
+            }
+        }
+    }
+
+}
+
+#clients {
+    background-color: $backColor;
+    padding: 35px 0 60px;
+
+    .ourClients {
+        h2 {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: $whatWeDo;
+        }
+
+    }
+
+    .imgDiv {
+
+        height: 160px;
+        margin: 0;
+        border: 1px solid #D5DDE4;
+        background: $white;
+        position: relative;
+        border-radius: 4px;
+
+        p {
+            font-weight: bold;
+            font-size: 24px;
+            letter-spacing: 0.01em;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        img {
+
+            max-height: 90px;
+        }
+    }
+
+}
+
+#team {
+    padding: 35px 0 60px;
+
+    .team {
+        h2 {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: $whatWeDo;
+        }
+    }
+
+    .person {
+
+        .imgbody {
+            padding: 16px 0 0;
+        }
+
+        img {
+
+            background-image: url(https://www.simbrella.com/site/templates/img/figure_green_bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+
+
+        }
+
+        h3 {
+            padding: 0 0 4px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.33;
+            letter-spacing: -0.02em;
+            color: $black;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            letter-spacing: -0.02em;
+            color: $paragraphColor;
+        }
+    }
+
+
+
+}
+
+#work {
+    background-color: $backColor;
+
+    .work {
+        h2 {
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: $whatWeDo;
+        }
+    }
+
+    .item {
+        h3 {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+    }
+
+    .allItems {
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+
+
+        .inner {
+            padding: 40px 60px;
+            color: $white;
+            background: $whatWeDo;
+            border-radius: 4px;
+            position: relative;
+
+            @media screen and (min-width:768px) {
+                margin-left: -48px;
+
+            }
+
+            a {
+                display: inline-block;
+                height: 56px;
+                padding: 0 100px 0 24px;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 56px;
+                color: $white;
+                background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 24px) 50%;
+                text-decoration: none;
+                box-shadow: inset 0 0 0 3px #fff;
+                border-radius: 12px;
+                transition: .3s ease-in-out;
+            }
+
+            a:hover {
+                background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 20px) 50%;
+                box-shadow: inset 0 0 0 3px $aHoverColor;
+            }
+        }
+    }
+
+}
+
+#news {
+    .news {
+        h2 {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: $whatWeDo;
+        }
+
+        .link {
+            a {
+                display: inline-block;
+                height: 56px;
+                padding: 0 100px 0 24px;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 56px;
+                color: $black;
+                text-decoration: none;
+                background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 24px) 50%;
+                box-shadow: inset 0 0 0 3px #dfe4eb;
+                border-radius: 12px;
+                transition: all 0.15s linear;
+            }
+
+            a:hover {
+                background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 20px) 50%;
+                box-shadow: inset 0 0 0 3px #ff931e;
+            }
+        }
+    }
+
+    .card {
+        border: none;
+
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        img {
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        .card-body {
+            padding: 20px 0 0 0;
+
+            h3 {
+                padding: 0 0 48px;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1.75;
+                color: $black;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.33;
+                color: $paragraphColor;
+            }
+        }
+
+    }
+
+}
+
+#footer {
+    padding: 35px 0 25px;
+    background-color: $black;
+    background-image: url(https://www.simbrella.com/site/templates/img/footer_bg.svg);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+
+    h2.contact {
+
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 1.3;
+        letter-spacing: 0.01em;
+        color: $white;
+
+    }
+
+    .footer_nav {
+
+        ul {
+            list-style-type: none;
+
+            @media screen and (max-width:992px) {
+                padding-left: 1rem;
+            }
+
+            li {
+                padding: 0 5px;
+                border-right: 1px solid #505050;
+
+                @media screen and (min-width:768px) {
+                    padding: 0 48px;
+
+                }
+
+                button {
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 1.33;
+                    letter-spacing: 0.01em;
+                    color: rgba(255, 255, 255, 0.5);
+                    text-decoration: none;
+                }
+
+                button.active {
+                    color: $aHoverColor;
+                }
+            }
+
+            li.lastLi {
+                border: none;
+                padding: 0;
+            }
+
+        }
+
+
+    }
+
+    .link {
+        a {
+            display: inline-block;
+            height: 56px;
+            width: 200px;
+            padding-left: 1rem;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 56px;
+            color: $white;
+            text-decoration: none;
+            background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 24px) 50%;
+            box-shadow: inset 0 0 0 3px #dfe4eb;
+            border-radius: 12px;
+            transition: all 0.15s linear;
+
+        }
+
+        @media screen and (max-width:992px) {
+            padding-left: 3rem;
+        }
+
+        a:hover {
+            background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 20px) 50%;
+            box-shadow: inset 0 0 0 3px #ff931e;
+        }
+    }
+
+    .footer_contacts {
+        padding-left: 50px;
+
+        ul {
+            list-style-type: none;
+
+            li {
+                padding: 0 0 48px;
+
+                span {
+                    display: block;
+                    padding: 0 0 12px;
+                    font-size: 18px;
+                    line-height: 1.45;
+                    color: rgba(255, 255, 255, 0.6);
+                }
+
+                p {
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 1.54;
+                    color: $white;
+
+                    a {
+                        color: $white;
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+    .jm {
+        padding: 0 10px 0 0;
+        font-size: 12px;
+        line-height: 2.67;
+        color: #fff;
+    }
+
+    .copyright {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #999;
+    }
+}
+
+//WHAT WE DO 
+#whatWeDoFirst {
+    background-image: url(https://www.simbrella.com/site/templates/img/we_do_bg.jpg?v=2);
+    height: 60vh;
+    background-repeat: no-repeat;
+    background-color: $blendColor;
+    background-blend-mode: color;
+    background-position: 0 50%;
+
+    .information {
+        h2 {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: $white;
+            position: absolute;
+            top: 50vh;
+        }
+    }
+}
+
+#whatSecond,
+#whatFourth,
+#whatSixth {
+    padding: 100px 0;
+    background-color: $backColor;
+
+    .card {
+        transition: .3s ease-in-out;
+        padding: 40px 0;
+
+        img {
+            height: 230px;
+        }
+
+        .card-body {
+            text-align: center;
+
+            h3 {
+                padding: 0 0 16px;
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 1.25;
+                text-align: center;
+                letter-spacing: 0.01em;
+
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.62;
+                text-align: center;
+                color: #5F6773;
+            }
+        }
+    }
+
+    .text {
+        font-size: 22px;
+        line-height: 1.4;
+
+        ul {
+            list-style: none;
+
+            li {
+                padding: 0 0 0 21px;
+                margin: 0 0 32px;
+                position: relative;
+            }
+
+            li::before {
+                content: "";
+                display: block;
+                width: 8px;
+                height: 8px;
+                background: $aHoverColor;
+                position: absolute;
+                left: 0;
+                top: calc(50% - 4px);
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+#whatThird,
+#whatFifth {
+    max-height: 480px;
+    min-height: 270px;
+    height: 30vw;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    background-image: url(https://www.simbrella.com/site/templates/img/single_image.jpg?v=2);
+    background-color: $blendColor;
+    background-blend-mode: color;
+}
+
+#whatFooter,
+#vacanciesFooter,
+#newsFooter,
+#firstNewsFooter,
+#branchesFooter,
+#vacancyFooter {
+    background-color: $black;
+    padding: 30px;
+
+    .jm {
+        padding: 0 10px 0 0;
+        font-size: 12px;
+        line-height: 2.67;
+        color: #fff;
+    }
+
+    .copyright {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #999;
+    }
+}
+
+// ALL VACANCIES
+
+.header.vacancies {
+    .logo {
+        background-image: url(https://www.simbrella.com/site/templates/img/logo_colored.svg);
+    }
+}
+
+#vacanciesFirst {
+    padding: 120px 0 40px;
+
+    h1 {
+        padding: 0 0 32px;
+        font-size: 32px;
+        line-height: 1.29;
+        font-weight: bold;
+        letter-spacing: 0.01em;
+        color: $black;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.56;
+        color: $paragraphColor;
+        padding: 0 0 20px;
+    }
+
+    
+}
+
+#vacanciesSecond {
+    background-color: $backColor;
+    padding: 100px 0;
+
+    .item {
+        text-align: center;
+        transition: all 0.15s linear;
+        padding: 40px 20px;
+        background: $white;
+        border: 1px solid $aHoverColor;
+        border-radius: 4px;
+        position: relative;
+
+        h3 {
+            font-weight: bold;
+            font-size: 19px;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+
+        }
+
+        .full_link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+    }
+
+    .item:hover {
+        background-color: $aHoverColor;
+    }
+
+    .item:hover h3 {
+        color: $white;
+    }
+}
+
+//NEWS 
+#newsFirst,
+#branchesFirst,
+#vacancyFirst {
+    background-image: url(https://www.simbrella.com/site/templates/img/vacancies_header_bg.svg);
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: cover;
+    background-color: #0C0D26;
+
+    .information {
+        h2 {
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: $white;
+            position: absolute;
+            top: 200px;
+
+        }
+    }
+}
+
+//NEWS ITEMS
+.header.firstNews,
+.header.secondNews,
+.header.thirdNews {
+    background-color: #0C0D26;
+    transition: .3s;
+}
+
+.header.firstNews.active,
+.header.secondNews.active,
+.header.thirdNews.active {
+    background-color: $white;
+}
+#firstNews{
+    height: 110px;
+    background-color: black;
+}
+#main {
+    padding-top: 120px;
+
+    h2 {
+        padding: 0px 0 30px;
+        margin: 0 0 20px;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 1.29;
+        letter-spacing: 0.01em;
+        color: $whatWeDo;
+    }
+
+    .information.firstNews,
+    .information.secondNews,
+    .information.thirdNews {
+        width: 70%;
+    }
+
+    p {
+        width: 70%;
+        padding-top: 60px;
+        font-size: 18px;
+        line-height: 1.56;
+        color: $black;
+    }
+
+}
+
+
+// BRANCHES
+#branchesSecond {
+    padding: 100px 0;
+    background-color: $backColor;
+
+    .item {
+        height: 410px;
+        padding: 40px;
+        border: 1px solid #e6e6e6;
+        background: $white;
+        background-repeat: no-repeat;
+        background-position: calc(100% - 40px) calc(100% - 40px);
+        border-radius: 4px;
+
+
+        h2 {
+            padding: 0 0 32px;
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+            color: $aHoverColor;
+        }
+
+        dt {
+            padding: 0 0 8px;
+            font-size: 14px;
+            line-height: 1.71;
+            color: #99A3B2;
+        }
+
+        dd {
+            min-height: 72px;
+            padding: 0 0 24px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            color: $black;
+        }
+
+        dd.contact {
+            min-height: 0;
+        }
+
+        a {
+            color: $black;
+            text-decoration: none;
+        }
+    }
+}
+
+// VACANCY
+
+#vacancySecond {
+    background-color: $backColor;
+    padding: 60px 0 90px;
+
+    h3 {
+        width: 100%;
+        padding: 0 0 18px;
+        font-size: 32px;
+        line-height: 1.33;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: $black;
+    }
+
+    .text {
+        padding: 0 0 30px;
+        margin: 0 0 60px;
+        border-bottom: 1px solid #E7E7E7;
+
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin: 0 0 24px;
+                padding: 0 0 0 21px;
+                font-size: 18px;
+                line-height: 1.56;
+                color: $black;
+                position: relative;
+            }
+
+            li::before {
+                content: "";
+                display: block;
+                width: 8px;
+                height: 8px;
+                background: $aHoverColor;
+                position: absolute;
+                left: 0;
+                top: 8px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+}
+
+.apply-section {
+    background-color: $whatWeDo;
+
+    #application {
+        border-bottom: 1px solid #E7E7E7;
+
+        input {
+            display: block;
+            height: 64px;
+            padding: 0 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: none;
+            font-size: 16px;
+            font-weight: 300;
+            font-family: 'fooont';
+            color: #fff;
+            border-radius: 12px;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-content: stretch;
+            align-items: center;
+            width: 100%;
+            height: 64px;
+            text-align: center;
+            border: 1px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        #upload-cv {
+            display: inline-block;
+            padding: 0 10px 0 27px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 2;
+            color: $white;
+            white-space: nowrap;
+            max-width: 70%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            background: url('https://www.simbrella.com/site/templates/img/file_white_icon.svg') no-repeat 0 50%;
+        }
+    }
+
+    .button-for-vacancies {
+        border-radius: 11px !important;
+        border: 3px solid #cccccc;
+        outline: none;
+        color: black;
+        font-size: 15p;
+        font-weight: 600;
+        padding: 12px;
+        height: 64px;
+
+        &:hover {
+            border-color: $aHoverColor;
+        }
+
+        &:hover img {
+            transform: translateX(4px);
+            transition: .2s;
+        }
+    }
+}
