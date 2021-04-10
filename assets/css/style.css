@@ -1,0 +1,1541 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0) !important;
+  position: fixed;
+  width: 100%;
+  -webkit-transition: .6s;
+  transition: .6s;
+  z-index: 2;
+}
+
+.header .container .logo {
+  background-image: url("https://www.simbrella.com/site/templates/img/logo.svg");
+  display: inline-block;
+  width: 154px;
+  height: 53px;
+  background-repeat: no-repeat;
+}
+
+.header .container ul li {
+  padding: 0 0 0 35px;
+  list-style: none;
+}
+
+.header .container ul li a {
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  font-size: 17px;
+  line-height: 1.41;
+  color: #eee;
+}
+
+.header .container ul li a:hover {
+  color: #FF931E;
+  text-decoration: none;
+}
+
+.header .container ul li a.active {
+  color: #FF931E;
+}
+
+.header .container .hamburgerIcon {
+  float: right;
+}
+
+.header .container .hamburgerIcon .header__hamburger {
+  width: 24px;
+  height: 2px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 2px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.header .container .hamburgerIcon .header__hamburger::after, .header .container .hamburgerIcon .header__hamburger::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  left: 0;
+  border-radius: 2px;
+}
+
+.header .container .hamburgerIcon .header__hamburger::before {
+  top: -6px;
+}
+
+.header .container .hamburgerIcon .header__hamburger::after {
+  top: 6px;
+}
+
+.header .container .hamburgerIcon .header__hamburger--active {
+  background-color: transparent !important;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.header .container .hamburgerIcon .header__hamburger--active::before, .header .container .hamburgerIcon .header__hamburger--active::after {
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.header .container .hamburgerIcon .header__hamburger--active::before {
+  -webkit-animation-name: hamburgerTop;
+          animation-name: hamburgerTop;
+}
+
+.header .container .hamburgerIcon .header__hamburger--active::after {
+  -webkit-animation-name: hamburgerDown;
+          animation-name: hamburgerDown;
+}
+
+.header .container .hamburgerIcon .header__hamburger--close {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.header .container .hamburgerIcon .header__hamburger--close::before, .header .container .hamburgerIcon .header__hamburger--close::after {
+  -webkit-animation-duration: .6s;
+          animation-duration: .6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.header .container .hamburgerIcon .header__hamburger--close::before {
+  -webkit-animation-name: closeHamburgerTop;
+          animation-name: closeHamburgerTop;
+}
+
+.header .container .hamburgerIcon .header__hamburger--close::after {
+  -webkit-animation-name: closeHamburgerDown;
+          animation-name: closeHamburgerDown;
+}
+
+@-webkit-keyframes hamburgerTop {
+  0% {
+    top: -6px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@keyframes hamburgerTop {
+  0% {
+    top: -6px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes hamburgerDown {
+  0% {
+    top: 6px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+
+@keyframes hamburgerDown {
+  0% {
+    top: 6px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+
+@-webkit-keyframes closeHamburgerTop {
+  0% {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: -6px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes closeHamburgerTop {
+  0% {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: -6px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes closeHamburgerDown {
+  0% {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: 6px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes closeHamburgerDown {
+  0% {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  50% {
+    top: 0;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    top: 6px;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+.header .container .hamburgerIcon .header__hamburger--scroll {
+  width: 24px;
+  height: 2px;
+  background-color: #2D3192;
+  position: relative;
+  border-radius: 2px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.header .container .hamburgerIcon .header__hamburger--scroll::after, .header .container .hamburgerIcon .header__hamburger--scroll::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #2D3192;
+  left: 0;
+  border-radius: 2px;
+}
+
+.header .container .hamburgerIcon .header__hamburger--scroll::before {
+  top: -6px;
+}
+
+.header .container .hamburgerIcon .header__hamburger--scroll::after {
+  top: 6px;
+}
+
+.header .after-click {
+  background-color: #2D3192;
+  -webkit-transition: .5s;
+  transition: .5s;
+  height: 100vh;
+}
+
+.header .after-click .customized-list-group__items a {
+  color: #fff !important;
+}
+
+.header .after-click .customized-list-group__items a:hover {
+  text-decoration: none;
+}
+
+.header .customized-list-group {
+  list-style-type: none !important;
+}
+
+.header .customized-list-group__items {
+  padding: 24px 8px;
+  border-bottom: 1px solid #504e78;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+
+@media screen and (max-width: 1023px) {
+  .header .menuItems {
+    display: none !important;
+  }
+  .header .hamburgerIcon {
+    display: block !important;
+  }
+}
+
+.blueColor {
+  background-color: #2D3192 !important;
+}
+
+.header.active {
+  height: 80px;
+  background: #fff !important;
+  z-index: 2;
+  -webkit-box-shadow: 0 0 10px 0;
+          box-shadow: 0 0 10px 0;
+}
+
+.header.active .logo {
+  background-image: url(https://www.simbrella.com/site/templates/img/logo_colored.svg);
+  background-repeat: no-repeat;
+}
+
+.header.active ul li a {
+  color: black;
+  font-size: 17px;
+  line-height: 1.41;
+}
+
+#firstSection {
+  background-image: url("https://www.simbrella.com/site/assets/files/1040/cover.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  background-size: cover;
+  background-color: #00000045;
+  background-blend-mode: color;
+}
+
+@media screen and (max-width: 768px) {
+  #firstSection {
+    background-position: 60% 50%;
+  }
+  #firstSection h1 {
+    font-size: 25px;
+  }
+}
+
+#firstSection .container {
+  z-index: 1;
+}
+
+#firstSection .bigText {
+  max-width: 640px;
+}
+
+#firstSection .bigText h1 {
+  padding: 0 0 16px;
+  font-size: 51px;
+  line-height: 1.29;
+  letter-spacing: -0.01em;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1023px) {
+  #firstSection .bigText h1 {
+    font-size: 35px;
+  }
+}
+
+#firstSection .bigText .text {
+  color: #fff;
+  padding: 0 0 48px;
+  font-size: 16px;
+  line-height: 1.87;
+}
+
+#firstSection .scrollBtn {
+  position: absolute;
+  bottom: 50px;
+}
+
+#firstSection .scrollBtn a {
+  color: #fff;
+  padding: 0 0 0 34px;
+  font-size: 14px;
+  line-height: 1.71;
+  position: relative;
+}
+
+#firstSection .scrollBtn a:hover {
+  text-decoration: none;
+}
+
+#firstSection .scrollBtn a::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 41px;
+  background: url(https://www.simbrella.com/site/templates/img/mouse_icon.svg) no-repeat 0 0;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 26px);
+}
+
+#secondSection {
+  padding: 35px 0 60px;
+}
+
+#secondSection .information h2 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #2D3192;
+}
+
+#secondSection .information .link a {
+  display: inline-block;
+  height: 56px;
+  padding: 0 100px 0 24px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 56px;
+  color: #222;
+  text-decoration: none;
+  background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 24px) 50%;
+  -webkit-box-shadow: inset 0 0 0 3px #dfe4eb;
+          box-shadow: inset 0 0 0 3px #dfe4eb;
+  border-radius: 12px;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+#secondSection .information .link a:hover {
+  background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 20px) 50%;
+  -webkit-box-shadow: inset 0 0 0 3px #ff931e;
+          box-shadow: inset 0 0 0 3px #ff931e;
+}
+
+#secondSection .card {
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  padding: 40px 0;
+}
+
+#secondSection .card img {
+  height: 230px;
+}
+
+#secondSection .card .card-body {
+  text-align: center;
+}
+
+#secondSection .card .card-body h3 {
+  padding: 0 0 16px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+#secondSection .card .card-body p {
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  color: #5F6773;
+}
+
+#secondSection .card .full_link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+#secondSection .card:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+#thirdSection {
+  z-index: 1;
+  background-image: url(https://www.simbrella.com/site/assets/files/1049/solutions_bg-1.jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  height: 60vh;
+}
+
+#thirdSection h2 {
+  font-weight: bold;
+  font-size: 54px;
+  line-height: 1.29;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-shadow: 2px 2px 6px black;
+  width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+  #thirdSection h2 {
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+#thirdSection .list {
+  z-index: 2;
+}
+
+#thirdSection .list li {
+  list-style: none;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+@media screen and (max-width: 992px) {
+  #thirdSection .list li {
+    padding: 10px 0;
+  }
+}
+
+#thirdSection .list li h3 {
+  padding: 0 0 0px;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 1.12;
+  color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+  #thirdSection .list li h3 {
+    font-size: 13px;
+  }
+}
+
+#thirdSection::before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: rgba(45, 49, 146, 0.6);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#fourthSection {
+  padding: 60px 0 0;
+}
+
+#fourthSection h2 {
+  padding: 0 0 40px;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.29;
+  letter-spacing: 0.01em;
+  color: #2D3192;
+}
+
+#fourthSection .counter {
+  padding: 90px 0;
+}
+
+#fourthSection .counter .counfect {
+  font-size: 2.5rem;
+}
+
+#fourthSection .counter h3 {
+  padding: 0 0 8px;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #FF931E;
+}
+
+#fourthSection .counter p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.86;
+  text-transform: uppercase;
+  color: black;
+}
+
+#map {
+  padding: 0 0 60px;
+}
+
+#map .map-inner {
+  position: relative;
+}
+
+#map .map-inner .inner {
+  width: 100%;
+  height: 0;
+  padding: 0px 20px 0px;
+  position: absolute;
+  left: 0px;
+  top: 80px;
+}
+
+#map .map-inner .inner h2 {
+  height: 0;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.29;
+  letter-spacing: 0.01em;
+  color: #2D3192;
+}
+
+@media screen and (max-width: 992px) {
+  #map .map-inner .inner {
+    text-align: center;
+    top: 0;
+  }
+}
+
+#map .map-inner .map_svg div {
+  cursor: pointer;
+}
+
+#map .map-inner .operatorsInfo {
+  width: 100%;
+  height: 0;
+  padding: 0 20px;
+  position: absolute;
+  left: 0;
+  bottom: 160px;
+}
+
+@media screen and (max-width: 992px) {
+  #map .map-inner .operatorsInfo {
+    display: none !important;
+  }
+}
+
+#map .map-inner .operatorsInfo div {
+  display: block;
+  padding: 27px;
+  border: 1px solid #D3D8E7;
+  border-radius: 4px;
+}
+
+#map .map-inner .operatorsInfo div p {
+  margin: 0 0 16px;
+  padding: 0 0 0 30px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-transform: capitalize;
+  color: #222;
+  position: relative;
+}
+
+#map .map-inner .operatorsInfo div p.orange::before,
+#map .map-inner .operatorsInfo div p.orange::after {
+  background-color: #FF931E;
+}
+
+#map .map-inner .operatorsInfo div p.blue::before,
+#map .map-inner .operatorsInfo div p.blue::after {
+  background-color: #2D3192;
+}
+
+#map .map-inner .operatorsInfo div p.both::before,
+#map .map-inner .operatorsInfo div p.both::after {
+  opacity: 1;
+  background: url(https://www.simbrella.com/site/templates/img/both_icon.svg) no-repeat 50%;
+  background-size: 24px;
+}
+
+#map .map-inner .operatorsInfo div p::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 10px);
+  opacity: 0.3;
+}
+
+#map .map-inner .operatorsInfo div p::after {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  left: 7px;
+  top: calc(50% - 3px);
+}
+
+#clients {
+  background-color: #f6f8fe;
+  padding: 35px 0 60px;
+}
+
+#clients .ourClients h2 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #2D3192;
+}
+
+#clients .imgDiv {
+  height: 160px;
+  margin: 0;
+  border: 1px solid #D5DDE4;
+  background: #fff;
+  position: relative;
+  border-radius: 4px;
+}
+
+#clients .imgDiv p {
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+  text-align: center;
+}
+
+#clients .imgDiv img {
+  max-height: 90px;
+}
+
+#team {
+  padding: 35px 0 60px;
+}
+
+#team .team h2 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #2D3192;
+}
+
+#team .person .imgbody {
+  padding: 16px 0 0;
+}
+
+#team .person img {
+  background-image: url(https://www.simbrella.com/site/templates/img/figure_green_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#team .person h3 {
+  padding: 0 0 4px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: -0.02em;
+  color: black;
+}
+
+#team .person p {
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+  color: #5F6773;
+}
+
+#work {
+  background-color: #f6f8fe;
+}
+
+#work .work h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #2D3192;
+}
+
+#work .item h3 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+#work .allItems {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#work .allItems .inner {
+  padding: 40px 60px;
+  color: #fff;
+  background: #2D3192;
+  border-radius: 4px;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  #work .allItems .inner {
+    margin-left: -48px;
+  }
+}
+
+#work .allItems .inner a {
+  display: inline-block;
+  height: 56px;
+  padding: 0 100px 0 24px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 56px;
+  color: #fff;
+  background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 24px) 50%;
+  text-decoration: none;
+  -webkit-box-shadow: inset 0 0 0 3px #fff;
+          box-shadow: inset 0 0 0 3px #fff;
+  border-radius: 12px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+#work .allItems .inner a:hover {
+  background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 20px) 50%;
+  -webkit-box-shadow: inset 0 0 0 3px #FF931E;
+          box-shadow: inset 0 0 0 3px #FF931E;
+}
+
+#news .news h2 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #2D3192;
+}
+
+#news .news .link a {
+  display: inline-block;
+  height: 56px;
+  padding: 0 100px 0 24px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 56px;
+  color: black;
+  text-decoration: none;
+  background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 24px) 50%;
+  -webkit-box-shadow: inset 0 0 0 3px #dfe4eb;
+          box-shadow: inset 0 0 0 3px #dfe4eb;
+  border-radius: 12px;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+#news .news .link a:hover {
+  background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 20px) 50%;
+  -webkit-box-shadow: inset 0 0 0 3px #ff931e;
+          box-shadow: inset 0 0 0 3px #ff931e;
+}
+
+#news .card {
+  border: none;
+}
+
+#news .card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+#news .card img {
+  border-radius: 6px;
+  width: 100%;
+}
+
+#news .card .card-body {
+  padding: 20px 0 0 0;
+}
+
+#news .card .card-body h3 {
+  padding: 0 0 48px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.75;
+  color: black;
+}
+
+#news .card .card-body p {
+  font-size: 18px;
+  line-height: 1.33;
+  color: #5F6773;
+}
+
+#footer {
+  padding: 35px 0 25px;
+  background-color: black;
+  background-image: url(https://www.simbrella.com/site/templates/img/footer_bg.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+#footer h2.contact {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+#footer .footer_nav ul {
+  list-style-type: none;
+}
+
+@media screen and (max-width: 992px) {
+  #footer .footer_nav ul {
+    padding-left: 1rem;
+  }
+}
+
+#footer .footer_nav ul li {
+  padding: 0 5px;
+  border-right: 1px solid #505050;
+}
+
+@media screen and (min-width: 768px) {
+  #footer .footer_nav ul li {
+    padding: 0 48px;
+  }
+}
+
+#footer .footer_nav ul li button {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+#footer .footer_nav ul li button.active {
+  color: #FF931E;
+}
+
+#footer .footer_nav ul li.lastLi {
+  border: none;
+  padding: 0;
+}
+
+#footer .link a {
+  display: inline-block;
+  height: 56px;
+  width: 200px;
+  padding-left: 1rem;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 56px;
+  color: #fff;
+  text-decoration: none;
+  background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 24px) 50%;
+  -webkit-box-shadow: inset 0 0 0 3px #dfe4eb;
+          box-shadow: inset 0 0 0 3px #dfe4eb;
+  border-radius: 12px;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+@media screen and (max-width: 992px) {
+  #footer .link {
+    padding-left: 3rem;
+  }
+}
+
+#footer .link a:hover {
+  background: url(https://www.simbrella.com/site/templates/img/link_orange_icon.svg) no-repeat calc(100% - 20px) 50%;
+  -webkit-box-shadow: inset 0 0 0 3px #ff931e;
+          box-shadow: inset 0 0 0 3px #ff931e;
+}
+
+#footer .footer_contacts {
+  padding-left: 50px;
+}
+
+#footer .footer_contacts ul {
+  list-style-type: none;
+}
+
+#footer .footer_contacts ul li {
+  padding: 0 0 48px;
+}
+
+#footer .footer_contacts ul li span {
+  display: block;
+  padding: 0 0 12px;
+  font-size: 18px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#footer .footer_contacts ul li p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.54;
+  color: #fff;
+}
+
+#footer .footer_contacts ul li p a {
+  color: #fff;
+}
+
+#footer .jm {
+  padding: 0 10px 0 0;
+  font-size: 12px;
+  line-height: 2.67;
+  color: #fff;
+}
+
+#footer .copyright {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #999;
+}
+
+#whatWeDoFirst {
+  background-image: url(https://www.simbrella.com/site/templates/img/we_do_bg.jpg?v=2);
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-color: #0000005c;
+  background-blend-mode: color;
+  background-position: 0 50%;
+}
+
+#whatWeDoFirst .information h2 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #fff;
+  position: absolute;
+  top: 50vh;
+}
+
+#whatSecond,
+#whatFourth,
+#whatSixth {
+  padding: 100px 0;
+  background-color: #f6f8fe;
+}
+
+#whatSecond .card,
+#whatFourth .card,
+#whatSixth .card {
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  padding: 40px 0;
+}
+
+#whatSecond .card img,
+#whatFourth .card img,
+#whatSixth .card img {
+  height: 230px;
+}
+
+#whatSecond .card .card-body,
+#whatFourth .card .card-body,
+#whatSixth .card .card-body {
+  text-align: center;
+}
+
+#whatSecond .card .card-body h3,
+#whatFourth .card .card-body h3,
+#whatSixth .card .card-body h3 {
+  padding: 0 0 16px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+#whatSecond .card .card-body p,
+#whatFourth .card .card-body p,
+#whatSixth .card .card-body p {
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  color: #5F6773;
+}
+
+#whatSecond .text,
+#whatFourth .text,
+#whatSixth .text {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+#whatSecond .text ul,
+#whatFourth .text ul,
+#whatSixth .text ul {
+  list-style: none;
+}
+
+#whatSecond .text ul li,
+#whatFourth .text ul li,
+#whatSixth .text ul li {
+  padding: 0 0 0 21px;
+  margin: 0 0 32px;
+  position: relative;
+}
+
+#whatSecond .text ul li::before,
+#whatFourth .text ul li::before,
+#whatSixth .text ul li::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #FF931E;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 4px);
+  border-radius: 50%;
+}
+
+#whatThird,
+#whatFifth {
+  max-height: 480px;
+  min-height: 270px;
+  height: 30vw;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  background-image: url(https://www.simbrella.com/site/templates/img/single_image.jpg?v=2);
+  background-color: #0000005c;
+  background-blend-mode: color;
+}
+
+#whatFooter,
+#vacanciesFooter,
+#newsFooter,
+#firstNewsFooter,
+#branchesFooter,
+#vacancyFooter {
+  background-color: black;
+  padding: 30px;
+}
+
+#whatFooter .jm,
+#vacanciesFooter .jm,
+#newsFooter .jm,
+#firstNewsFooter .jm,
+#branchesFooter .jm,
+#vacancyFooter .jm {
+  padding: 0 10px 0 0;
+  font-size: 12px;
+  line-height: 2.67;
+  color: #fff;
+}
+
+#whatFooter .copyright,
+#vacanciesFooter .copyright,
+#newsFooter .copyright,
+#firstNewsFooter .copyright,
+#branchesFooter .copyright,
+#vacancyFooter .copyright {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #999;
+}
+
+.header.vacancies .logo {
+  background-image: url(https://www.simbrella.com/site/templates/img/logo_colored.svg);
+}
+
+#vacanciesFirst {
+  padding: 120px 0 40px;
+}
+
+#vacanciesFirst h1 {
+  padding: 0 0 32px;
+  font-size: 32px;
+  line-height: 1.29;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+  color: black;
+}
+
+#vacanciesFirst p {
+  font-size: 18px;
+  line-height: 1.56;
+  color: #5F6773;
+  padding: 0 0 20px;
+}
+
+#vacanciesSecond {
+  background-color: #f6f8fe;
+  padding: 100px 0;
+}
+
+#vacanciesSecond .item {
+  text-align: center;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  padding: 40px 20px;
+  background: #fff;
+  border: 1px solid #FF931E;
+  border-radius: 4px;
+  position: relative;
+}
+
+#vacanciesSecond .item h3 {
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+#vacanciesSecond .item .full_link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+#vacanciesSecond .item:hover {
+  background-color: #FF931E;
+}
+
+#vacanciesSecond .item:hover h3 {
+  color: #fff;
+}
+
+#newsFirst,
+#branchesFirst,
+#vacancyFirst {
+  background-image: url(https://www.simbrella.com/site/templates/img/vacancies_header_bg.svg);
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: cover;
+  background-color: #0C0D26;
+}
+
+#newsFirst .information h2,
+#branchesFirst .information h2,
+#vacancyFirst .information h2 {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  color: #fff;
+  position: absolute;
+  top: 200px;
+}
+
+.header.firstNews,
+.header.secondNews,
+.header.thirdNews {
+  background-color: #0C0D26;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.header.firstNews.active,
+.header.secondNews.active,
+.header.thirdNews.active {
+  background-color: #fff;
+}
+
+#firstNews {
+  height: 110px;
+  background-color: black;
+}
+
+#main {
+  padding-top: 120px;
+}
+
+#main h2 {
+  padding: 0px 0 30px;
+  margin: 0 0 20px;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 1.29;
+  letter-spacing: 0.01em;
+  color: #2D3192;
+}
+
+#main .information.firstNews,
+#main .information.secondNews,
+#main .information.thirdNews {
+  width: 70%;
+}
+
+#main p {
+  width: 70%;
+  padding-top: 60px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: black;
+}
+
+#branchesSecond {
+  padding: 100px 0;
+  background-color: #f6f8fe;
+}
+
+#branchesSecond .item {
+  height: 410px;
+  padding: 40px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 40px) calc(100% - 40px);
+  border-radius: 4px;
+}
+
+#branchesSecond .item h2 {
+  padding: 0 0 32px;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #FF931E;
+}
+
+#branchesSecond .item dt {
+  padding: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #99A3B2;
+}
+
+#branchesSecond .item dd {
+  min-height: 72px;
+  padding: 0 0 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: black;
+}
+
+#branchesSecond .item dd.contact {
+  min-height: 0;
+}
+
+#branchesSecond .item a {
+  color: black;
+  text-decoration: none;
+}
+
+#vacancySecond {
+  background-color: #f6f8fe;
+  padding: 60px 0 90px;
+}
+
+#vacancySecond h3 {
+  width: 100%;
+  padding: 0 0 18px;
+  font-size: 32px;
+  line-height: 1.33;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: black;
+}
+
+#vacancySecond .text {
+  padding: 0 0 30px;
+  margin: 0 0 60px;
+  border-bottom: 1px solid #E7E7E7;
+}
+
+#vacancySecond .text ul {
+  list-style: none;
+  padding: 0;
+}
+
+#vacancySecond .text ul li {
+  margin: 0 0 24px;
+  padding: 0 0 0 21px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: black;
+  position: relative;
+}
+
+#vacancySecond .text ul li::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #FF931E;
+  position: absolute;
+  left: 0;
+  top: 8px;
+  border-radius: 50%;
+}
+
+.apply-section {
+  background-color: #2D3192;
+}
+
+.apply-section #application {
+  border-bottom: 1px solid #E7E7E7;
+}
+
+.apply-section #application input {
+  display: block;
+  height: 64px;
+  padding: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: none;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'fooont';
+  color: #fff;
+  border-radius: 12px;
+}
+
+.apply-section #application label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 64px;
+  text-align: center;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.apply-section #application #upload-cv {
+  display: inline-block;
+  padding: 0 10px 0 27px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 2;
+  color: #fff;
+  white-space: nowrap;
+  max-width: 70%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background: url("https://www.simbrella.com/site/templates/img/file_white_icon.svg") no-repeat 0 50%;
+}
+
+.apply-section .button-for-vacancies {
+  border-radius: 11px !important;
+  border: 3px solid #cccccc;
+  outline: none;
+  color: black;
+  font-size: 15p;
+  font-weight: 600;
+  padding: 12px;
+  height: 64px;
+}
+
+.apply-section .button-for-vacancies:hover {
+  border-color: #FF931E;
+}
+
+.apply-section .button-for-vacancies:hover img {
+  -webkit-transform: translateX(4px);
+          transform: translateX(4px);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+/*# sourceMappingURL=style.css.map */
